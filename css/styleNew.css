@@ -1,0 +1,137 @@
+
+.immg{
+    height: 250px;
+    text-align: center;
+    width: 100%;
+    margin-top: -30px;
+}
+.cloo{
+    font-weight: 900;
+    position: relative;
+    top: -22px;
+    left: 101%;
+    margin-bottom: -20px;
+}
+.line1desc{
+    text-align: center;
+    font-size: 25px;
+    line-height: 1;
+    margin-top: 5px;
+    text-transform: uppercase;
+    color: #fe6124;
+    margin-bottom: 5px;
+}
+.line2desc{
+    line-height: 1;
+    font-size: 19px;
+    margin: 3px;
+        text-align: center;
+    margin-bottom: 0;
+}
+
+
+.details-list{
+    border-top: none !important;
+    padding: 0 !important;
+    list-style-type: disc;
+    text-align: left;
+    margin-left: 35px;
+    color: #4f4f4f !important;
+}
+.details-list strong{
+    font-weight: 100 !important; 
+    font-size: 14px !important;
+}
+
+.price-ii{
+    border: none !important;
+    font-size: 20px !important;
+}
+.marg0{
+    margin: 0 !important;
+}
+.margin10{
+    margin-bottom: 10px !important;
+}
+.t-team:hover:after{
+    content: attr(title);
+}
+.list-team{
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+
+    position: relative;
+    float: left;
+    list-style: none;
+    margin: 0 20px 20px 0;
+    font-size: 20px;
+}
+
+.t-team:hover:after,
+.t-team:focus:after
+{
+    background: rgba(255, 255, 255, 0.75);
+    bottom: 2px;
+    content: attr(title);
+    color: #9d003d;
+    display: block;
+    font-weight: bold;
+    padding-top: 50%;
+    height: 100%;
+    line-height: 30px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+.t-team:hover:after,
+.t-team:focus:after { top: 0; }
+.box-team{
+    box-shadow: 2px 5px 5px black;
+}
+.team-name{
+    float: left;
+    width: 100%;
+    border: none !important;
+    padding-bottom: 0 !important;
+}
+.team-name strong{
+    font-size: 20px !important;
+    margin-top: 10px;
+}
+.small-desc{
+    font-size: 17px !important;
+    color: #fe6124 !important;
+    font-weight: 700 !important;
+}
+.teamtalk{
+    text-indent: 20px;
+}
+.teamtalk p{
+    font-weight: 800;
+    font-size: 11px;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 640px) {
+    .teamtalk p{
+        margin-top: 10% !important;
+        font-size: 16px;
+    }
+}
+
+.nom-t{
+    text-align: center;
+    font-weight: 800;
+    font-size: 30px;
+}
+.team-info{
+    font-weight: 600;
+    font-size: 17px;
+    text-transform: capitalize;
+}
+.team-info span{
+    color : #fe6124 !important;
+}
