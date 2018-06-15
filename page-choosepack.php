@@ -1,4 +1,6 @@
 
+
+
  <?php
 /**
  * Template Name: Package Page
@@ -27,23 +29,17 @@ get_header(); ?>
 
 </style>
 
-<div id="loading">
-    <div id="loading-center">
-        <div id="loading-center-absolute">
-            <div id="object"></div>
-        </div>
-    </div>
-</div>
+
 
 <!-- =========================
      Section1 - Header   
 ============================== -->
-  <div class="jumbotron">
+  <div class="jumbotron" style="background-image: url('<?php echo $wp_elegant['package-choosen-backgorud-image']['url'];?>');">
     <div class="container"> 
       <div class="row">
         <!-- Header Left -->
         <div class="col-sm-7">
-          <div class="logo"><a href="#"><img alt="" src="packf/img/logo.jpg"></a></div>
+          <div class="logo"><a href="<?php echo get_home_url();?>"><img alt="" src="<?php echo $wp_elegant['top-section-logo']['url']?>"></a></div>
           <div class="verticle-line">
             <h1>You have chosen <br>
               the 
@@ -68,7 +64,7 @@ if(!empty($getVar))
         <div class="col-sm-5" id="join-us-form" style="    background: white;
     padding: 0;"> 
           <!-- Form Title -->
-            <h2 class="form-title">WEDDING & EVENT PACKAGES
+            <h2 class="form-title"><?php echo $wp_elegant['package-choosen-form-title']?>
           <span class="arrow-down"></span>
               </h2>
           <!--- /End Form Title -->
@@ -78,7 +74,7 @@ if(!empty($getVar))
 
     <div class="form-bg">
         
-          <?php echo do_shortcode( '[contact-form-7 id="188" title="Contact Form"]' ); ?>
+          <?php echo do_shortcode( $wp_elegant['package-choosen-form'] ); ?>
         
         
       
@@ -101,28 +97,15 @@ if(!empty($getVar))
   <div class="container"> 
     <div class="row">
     
-    <!-- Box2 -->
+    <?php foreach ($wp_elegant['package-choosen-name'] as $packname) :{
+      # code...
+    }?>
     <div class="col-md-4">
       <div class="advertised">
-        <p><a href="index.html#pack" style="color:white;text-transform:uppercase;text-decoration:none">Silver</a></p>
+        <p><a href="<?php echo get_home_url();?>#pack" style="color:white;text-transform:uppercase;text-decoration:none"><?php echo $packname; ?></a></p>
       </div>
     </div>
-    <!-- /End Box2 --> 
-    
-    <!-- Box3 -->
-    <div class="col-md-4">
-      <div class="advertised">
-       <p><a href="index.html#pack" style="color:white;text-transform:uppercase;text-decoration:none">Gold</a></p>
-      </div>
-    </div>
-    <!-- /End Box3 --> 
-    
-    <!-- Box4 -->
-    <div class="col-md-4">
-      <div class="advertised">
-        <p><a href="index.html#pack" style="color:white;text-transform:uppercase;text-decoration:none">Platinum</a></p>
-      </div>
-    </div>
+    <?php endforeach;?>
     <!-- /End Box4 --> 
   </div>
 </div>
@@ -132,24 +115,16 @@ if(!empty($getVar))
 
 
 
-<!-- =========================
-     Section9 - Copyright   
-============================== -->
+
 <footer class="copyright-section">
   <div class="container">
     <div class="col-md-12 ">
-      <P>© Copyright 2016 <a href="http://elegantdreams.net/">Elegant Dreams, Inc., Weston, Fl 33327</P>
+     <?php echo $wp_elegant['copy-right-text']; ?>
     </div>
   </div>
 </footer>
 
-<!-- =========================
-     Scripts   
-============================== -->
-<script src="packf/js/jquery.min.js"></script>
-<script src="packf/js/jquery.ajaxchimp.js"></script>
-<script type="packf/text/javascript" src="js/bootstrap.min.js"></script>
-<script src="packf/js/custom.js"></script>
+
 <?php
 /**
  * The package template file

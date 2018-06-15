@@ -1,6 +1,6 @@
     <?php global $wp_elegant;?>
 
-
+<?php if(!is_page( 'Choosepack' )):?>
     <?php require_once get_template_directory() .'/template-parts/contact.php';?> 
 
     </div><!-- end .main-section -->
@@ -10,7 +10,7 @@
 <?php require_once get_template_directory() .'/template-parts/project.php';?> 
 
                                                     
- 
+ <?php endif;?>
 
   <div class="project-nav invisible-element">
                                                         <div class="prev"><i class="fa fa-chevron-left"></i></div>

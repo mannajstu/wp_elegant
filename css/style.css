@@ -1279,7 +1279,7 @@ form textarea
     -webkit-transition: -webkit-transform 0.35s;
     transition: transform 0.35s;
     -webkit-transform: translate3d(0, -100%,0);
-    transform: translate3d(0,-100%,0);
+    transform: translate3d(0,-70%,0);
     z-index: 20;
     opacity: 0;
 }
@@ -1732,10 +1732,7 @@ h2.form-title {
     margin-bottom:15px;
     }
 
-    .wpcf7{
 
-
-    }
 
     .wpcf7-form{
 
@@ -1743,7 +1740,7 @@ h2.form-title {
 
     }
 
-    form.wpcf7-form::before, form.idealforms::after {
+    form.wpcf7-form::before, form.wpcf7-form::after {
   content: "";
   display: table;
 }
@@ -1753,6 +1750,8 @@ h2.form-title {
 }*::before, *::after {
   box-sizing: border-box;
 }
+
+
 .wpcf7-form-control{
 
 }

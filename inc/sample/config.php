@@ -167,24 +167,24 @@
         )
     );
 
-   
+
 
     // Panel Intro text -> before the form
-    if ( ! isset( $args['global_variable'] ) || $args['global_variable'] !== false ) {
-        if ( ! empty( $args['global_variable'] ) ) {
-            $v = $args['global_variable'];
-        } else {
-            $v = str_replace( '-', '_', $args['opt_name'] );
-        }
-        $args['intro_text'] = sprintf( __( '<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'redux-framework-demo' ), $v );
+if ( ! isset( $args['global_variable'] ) || $args['global_variable'] !== false ) {
+    if ( ! empty( $args['global_variable'] ) ) {
+        $v = $args['global_variable'];
     } else {
-        $args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'redux-framework-demo' );
+        $v = str_replace( '-', '_', $args['opt_name'] );
     }
+    $args['intro_text'] = sprintf( __( '<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'redux-framework-demo' ), $v );
+} else {
+    $args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'redux-framework-demo' );
+}
 
     // Add content after the form.
-    $args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'redux-framework-demo' );
+$args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'redux-framework-demo' );
 
-    Redux::setArgs( $opt_name, $args );
+Redux::setArgs( $opt_name, $args );
 
     /*
      * ---> END ARGUMENTS
@@ -233,350 +233,529 @@
      */
 
     // -> START Basic Fields
-    Redux::setSection( $opt_name, array(
-        'title'            => __( 'Elegant Theme Option', 'wp_' ),
-        'id'               => 'basic',
-        'desc'             => __( 'Elegant Theme Option!', 'wp_elegant' ),
-        'customizer_width' => '400px',
-        'icon'             => 'el el-home'
-    ) );
+        Redux::setSection( $opt_name, array(
+            'title'            => __( 'Elegant Theme Option', 'wp_' ),
+            'id'               => 'basic',
+            'desc'             => __( 'Elegant Theme Option!', 'wp_elegant' ),
+            'customizer_width' => '400px',
+            'icon'             => 'el el-home',
 
-    Redux::setSection( $opt_name, array(
-        'title'      => __( 'Top Section', 'wp_elegant' ),
-        'id'         => 'top-section',
-        
-        'subsection' => true,
-        'fields'     => array(
+        ) );
+
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Top Section', 'wp_elegant' ),
+            'id'         => 'top-section',
             
-            array(
-                'id'       => 'top-section-backgroud-image',
-                'type'     => 'media',
-                'title'    => __( 'Top Section Background Image', 'wp_elegant' ),
+            'subsection' => true,
+            'fields'     => array(
                 
+                array(
+                    'id'       => 'top-section-backgroud-image',
+                    'type'     => 'media',
+                    'title'    => __( 'Top Section Background Image', 'wp_elegant' ),
+                    
+                ),
+                array(
+                    'id'       => 'top-section-backgroud-video',
+                    'type'           => 'media',
+                    'library_filter' => array('mp4'),
+                    'mode' => false,
+                    'preview' => false,
+                    'url' => true,
+                    'title'    => __( 'Top Section Background Video', 'wp_elegant' ),
+                    
+                ),
+                array(
+                    'id'       => 'top-section-logo',
+                    'type'     => 'media',
+                    'title'    => __( 'Top Section Logo', 'wp_elegant' ),
+                    
+                ),
+                array(
+                    'id'       => 'top-section-title-1',
+                    'type'     => 'text',
+                    'title'    => __( 'Top Section Title Part 1', 'wp_elegant' ),
+                    
+                ),
+                array(
+                    'id'       => 'top-section-title-2',
+                    'type'     => 'text',
+                    'title'    => __( 'Top Section Title Part 2', 'wp_elegant' ),
+                    
+                ),
             ),
-            array(
-                'id'       => 'top-section-backgroud-video',
-                'type'           => 'media',
-                            'library_filter' => array('mp4'),
-                            'mode' => false,
-                            'preview' => false,
-                            'url' => true,
-                'title'    => __( 'Top Section Background Video', 'wp_elegant' ),
-                
-            ),
-            array(
-                'id'       => 'top-section-logo',
-                'type'     => 'media',
-                'title'    => __( 'Top Section Logo', 'wp_elegant' ),
-                
-            ),
-            array(
-                'id'       => 'top-section-title-1',
-                'type'     => 'text',
-                'title'    => __( 'Top Section Title Part 1', 'wp_elegant' ),
-                
-            ),
-            array(
-                'id'       => 'top-section-title-2',
-                'type'     => 'text',
-                'title'    => __( 'Top Section Title Part 2', 'wp_elegant' ),
-                
-            ),
-        ),
-    ) );
-     Redux::setSection( $opt_name, array(
-        'title'      => __( 'Second Section', 'wp_elegant' ),
-        'id'         => 'second-section',
-        
-        'subsection' => true,
-        'fields'     => array(
+        ) );
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Second Section', 'wp_elegant' ),
+            'id'         => 'second-section',
             
-            array(
-                'id'       => 'second-section-backgroud-image',
-                'type'     => 'media',
-                'title'    => __( 'Second Section Background Image', 'wp_elegant' ),
+            'subsection' => true,
+            'fields'     => array(
                 
+                array(
+                    'id'       => 'second-section-backgroud-image',
+                    'type'     => 'media',
+                    'title'    => __( 'Second Section Background Image', 'wp_elegant' ),
+                    
+                ),
+                array(
+                    'id'       => 'second-section-description',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Second Section Description', 'wp_elegant' ),
+                    
+                ),
             ),
-            array(
-                'id'       => 'second-section-description',
-                'type'     => 'textarea',
-                'title'    => __( 'Second Section Description', 'wp_elegant' ),
-                
-            ),
-        ),
-    ) );
-     Redux::setSection( $opt_name, array(
-        'title'      => __( 'Testimonial Section', 'wp_elegant' ),
-        'id'         => 'testimonial-section',
-        
-        'subsection' => true,
-        'fields'     => array(
+        ) );
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Testimonial Section', 'wp_elegant' ),
+            'id'         => 'testimonial-section',
             
-            array(
-                'id'       => 'testimonial-section-backgroud-image',
-                'type'     => 'media',
-                'title'    => __( 'Testimonial Section Background Image', 'wp_elegant' ),
+            'subsection' => true,
+            'fields'     => array(
                 
-            ),
-            array(
-                'id'       => 'testimonial-section-title',
-                'type'     => 'text',
-                'title'    => __( 'Testimonial Section Title', 'wp_elegant' ),
-                
-            ),
-            array(
-    'id'          => 'testimonial-section-description',
-    'type'        => 'slides',
-    'title'       => __('Add Testimonial', 'wp_elegant'),
-    'show' => array(
+                array(
+                    'id'       => 'testimonial-section-backgroud-image',
+                    'type'     => 'media',
+                    'title'    => __( 'Testimonial Section Background Image', 'wp_elegant' ),
+                    
+                ),
+                array(
+                    'id'       => 'testimonial-section-title',
+                    'type'     => 'text',
+                    'title'    => __( 'Testimonial Section Title', 'wp_elegant' ),
+                    
+                ),
+                array(
+                    'id'          => 'testimonial-section-description',
+                    'type'        => 'slides',
+                    'title'       => __('Add Testimonial', 'wp_elegant'),
+                    'show' => array(
                         'title' => false,
                         'description' => true,
                         'url' => false              
                     ),
-    
-    'placeholder' => array(
-        
-        'description'     => __('Add Testimonial Description Here', 'wp_elegant'),
-        
-    ),
-),
-        ),
-    ) );
-
-     Redux::setSection( $opt_name, array(
-        'title'      => __( 'Gallery Section', 'wp_elegant' ),
-        'id'         => 'gallery-section',
-        
-        'subsection' => true,
-        'fields'     => array(
-
-            
-            array(
-                'id'       => 'gallery-section-title',
-                'type'     => 'text',
-                'title'    => __( 'Gallery Section Title', 'wp_elegant' ),
-                
-            ),
-             
-            
-            array(
-    'id'          => 'gallery-section-description',
-    'type'        => 'slides',
-    'title'       => __('Add Gallery Project', 'wp_elegant'),
-       
-    'placeholder' => array(
-        'title'       => __('Add Gallery/Project Title', 'wp_elegant'),
-        'description'     => __('Add Gallery Description Here', 'wp_elegant'),
-        'url'=> __('Project Number', 'wp_elegant'),
-    ),
-),
-        ),
-    ) );
-
-Redux::setSection( $opt_name, array(
-        'title'      => __( 'Subscribe Section', 'wp_elegant' ),
-        'id'         => 'subscribe-section',
-        
-        'subsection' => true,
-         'fields'     => array(
-
-            
-            array(
-                'id'       => 'subscribe-section-title',
-                'type'     => 'text',
-                'title'    => __( 'Subscribe Section Title', 'wp_elegant' ),
-                
-            ),
-            array(
-                'id'       => 'subscribe-section-backgroud-image',
-                'type'     => 'media',
-                'title'    => __( 'Subscribe Section Background Image', 'wp_elegant' ),
-                
-            ),
-             
-        ),
-        
-    ) );
-Redux::setSection( $opt_name, array(
-        'title'      => __( 'Pricing Section', 'wp_elegant' ),
-        'id'         => 'pricing-section',
-        
-        'subsection' => true,
-         'fields'     => array(
-
-            
-            array(
-                'id'       => 'pricing-section-title',
-                'type'     => 'text',
-                'title'    => __( 'Pricing Section Title', 'wp_elegant' ),
-                
-            ),
-             array(
-                'id'       => 'pricing-section-title-below',
-                'type'     => 'textarea',
-                'title'    => __( 'Pricing Section Title Below', 'wp_elegant' ),
-                
-            ),
-            array(
-                'id'       => 'pricing-section-backgroud-image',
-                'type'     => 'media',
-                'title'    => __( 'Pricing Section Background Image', 'wp_elegant' ),
-                
-            ),
-             array(
-                'id'       => 'pricing-list-section-title',
-                'type'     => 'text',
-                'title'    => __( 'Pricing List Title', 'wp_elegant' ),
-                
-            ),
-             array(
-                'id'       => 'pricing-list-section-description',
-                'type'     => 'textarea',
-                'title'    => __( 'Pricing Section Title Below', 'wp_elegant' ),
-                
-            ),
-             
-        ),
-   
-        
-        
-    ) );
-Redux::setSection( $opt_name, array(
-        'title'      => __( 'Pricing List', 'wp_elegant' ),
-        'id'         => 'pricing-list-section',
-        
-        'subsection' => true,
-         'fields'     => array(
-             
-       array(
-    'id'          => 'pricing-list-section-package',
-    'type'        => 'slides',
-    'title'       => __('Add Price Package', 'wp_elegant'),
-    'show' => array(
-                        'title' => true,
-                        'description' => true,
-                        'url' => false ,
-                              
+                    
+                    'placeholder' => array(
+                        
+                        'description'     => __('Add Testimonial Description Here', 'wp_elegant'),
+                        
                     ),
+                ),
+            ),
+        ) );
 
-    
-    'placeholder' => array(
-        'title'           => __('Package title', 'wp_elegant'),
-        
-        'description'     => __('Add Package Description Here', 'wp_elegant'),
-        
-    ),
-),
-        ),
-    ) );
-Redux::setSection( $opt_name, array(
-        'title'      => __( 'Pricing Inclue Description', 'wp_elegant' ),
-        'id'         => 'pricing-list-include',
-        
-        'subsection' => true,
-         'fields'     => array(
-
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Gallery/Projetct Section', 'wp_elegant' ),
+            'id'         => 'gallery-section',
             
-            array(
-                'id'       => 'pricing-list-include-description',
-                'type'     => 'textarea',
-                'title'    => __( 'Pricing Mini Box Description', 'wp_elegant' ),
+            'subsection' => true,
+            'fields'     => array(
+
                 
+                array(
+                    'id'       => 'gallery-section-title',
+                    'type'     => 'text',
+                    'title'    => __( 'Gallery Section Title', 'wp_elegant' ),
+                    
+                ),
+                
+                
+                array(
+                    'id'          => 'gallery-section-description',
+                    'type'        => 'slides',
+                    'title'       => __('Add Gallery Project', 'wp_elegant'),
+                    
+                    'placeholder' => array(
+                        'title'       => __('Add Gallery/Project Title', 'wp_elegant'),
+                        'description'     => __('Add Gallery Description Here', 'wp_elegant'),
+                        'url'=> __('Project Number', 'wp_elegant'),
+                    ),
+                ),
             ),
+        ) );
 
-             
-        ),
-    ) );
-Redux::setSection( $opt_name, array(
-        'title'      => __( 'Contact Section', 'wp_elegant' ),
-        'id'         => 'contact-section',
-        
-        'subsection' => true,
-         'fields'     => array(
-
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Subscribe Section', 'wp_elegant' ),
+            'id'         => 'subscribe-section',
             
-            array(
-                'id'       => 'contact-section-title',
-                'type'     => 'text',
-                'title'    => __( 'Contact Section Title', 'wp_elegant' ),
-                
-            ),
- array(
-                'id'       => 'contact-section-address',
-                'type'     => 'textarea',
-                'title'    => __( 'Contact Section Address', 'wp_elegant' ),
-                
-            ),
- array(
-                'id'       => 'contact-section-phone',
-                'type'     => 'textarea',
-                'title'    => __( 'Contact Section Phone', 'wp_elegant' ),
-                
-            ),
- array(
-                'id'       => 'contact-section-email',
-                'type'     => 'textarea',
-                'title'    => __( 'Contact Section Email', 'wp_elegant' ),
-                
-            ),
-             
-        ),
-    ) );
+            'subsection' => true,
+            'fields'     => array(
 
-
-Redux::setSection( $opt_name, array(
-        'title'      => __( 'Social Link', 'wp_elegant' ),
-        'id'         => 'social-link',
-        
-        'subsection' => true,
-         'fields'     => array(
-
-            
-            array(
-                'id'       => 'social-link-facebook',
-                'type'     => 'text',
-                'title'    => __( 'Facebook', 'wp_elegant' ),
-                'validate' => 'url',
-            ),
-            array(
-                'id'       => 'social-link-twitter',
-                'type'     => 'text',
-                'title'    => __( 'Twitter', 'wp_elegant' ),
-                'validate' => 'url',
-            ),
-            array(
-                'id'       => 'social-link-google',
-                'type'     => 'text',
-                'title'    => __( 'Google plus', 'wp_elegant' ),
-                'validate' => 'url',
-            ), 
-array(
-                'id'       => 'social-link-youtube',
-                'type'     => 'text',
-                'title'    => __( 'Youtube', 'wp_elegant' ),
-                'validate' => 'url',
+                
+                array(
+                    'id'       => 'subscribe-section-title',
+                    'type'     => 'text',
+                    'title'    => __( 'Subscribe Section Title', 'wp_elegant' ),
+                    
+                ),
+                array(
+                    'id'       => 'subscribe-section-backgroud-image',
+                    'type'     => 'media',
+                    'title'    => __( 'Subscribe Section Background Image', 'wp_elegant' ),
+                    
+                ),
+                array(
+                    'id'       => 'subscribe-section-mailchimp',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Subscribe Mailchimp Section', 'wp_elegant' ),
+                    
+                ),
+                
             ),
             
-           array(
-                'id'       => 'social-link-pinterest',
-                'type'     => 'text',
-                'title'    => __( 'Pinterest', 'wp_elegant' ),
-                'validate' => 'url',
-            ),
-           array(
-                'id'       => 'social-link-instagram',
-                'type'     => 'text',
-                'title'    => __( 'Instagram', 'wp_elegant' ),
-                'validate' => 'url',
-            ),
-             
-             
-             
-        ),
-    ) );
-    
+        ) );
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Pricing Section', 'wp_elegant' ),
+            'id'         => 'pricing-section',
+            
+            'subsection' => true,
+            'fields'     => array(
 
-    
+                
+                array(
+                    'id'       => 'pricing-section-title',
+                    'type'     => 'text',
+                    'title'    => __( 'Pricing Section Title', 'wp_elegant' ),
+                    
+                ),
+                array(
+                    'id'       => 'pricing-section-title-below',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Pricing Section Title Below', 'wp_elegant' ),
+                    
+                ),
+                array(
+                    'id'       => 'pricing-section-backgroud-image',
+                    'type'     => 'media',
+                    'title'    => __( 'Pricing Section Background Image', 'wp_elegant' ),
+                    
+                ),
+                array(
+                    'id'       => 'pricing-list-section-title',
+                    'type'     => 'text',
+                    'title'    => __( 'Pricing List Title', 'wp_elegant' ),
+                    
+                ),
+                array(
+                    'id'       => 'pricing-list-section-description',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Pricing Section Title Below', 'wp_elegant' ),
+                    
+                ),
+                
+            ),
+            
+            
+            
+        ) );
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Pricing List', 'wp_elegant' ),
+            'id'         => 'pricing-list-section',
+            
+            'subsection' => true,
+            'fields'     => array(
+               
+             array(
+                'id'          => 'pricing-list-section-package',
+                'type'        => 'slides',
+                'title'       => __('Add Price Package', 'wp_elegant'),
+                'show' => array(
+                    'title' => true,
+                    'description' => true,
+                    'url' => false ,
+                    
+                ),
+
+                
+                'placeholder' => array(
+                    'title'           => __('Package title', 'wp_elegant'),
+                    
+                    'description'     => __('Add Package Description Here', 'wp_elegant'),
+                    
+                ),
+            ),
+         ),
+        ) );
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Pricing Inclue Description', 'wp_elegant' ),
+            'id'         => 'pricing-list-include',
+            
+            'subsection' => true,
+            'fields'     => array(
+
+                
+                array(
+                    'id'       => 'pricing-list-include-description',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Pricing Mini Box Description', 'wp_elegant' ),
+                    
+                ),
+
+                
+            ),
+        ) );
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Contact Section', 'wp_elegant' ),
+            'id'         => 'contact-section',
+            
+            'subsection' => true,
+            'fields'     => array(
+
+                
+                array(
+                    'id'       => 'contact-section-title',
+                    'type'     => 'text',
+                    'title'    => __( 'Contact Section Title', 'wp_elegant' ),
+                    
+                ),
+                array(
+                    'id'       => 'contact-section-map',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Contact Section Map', 'wp_elegant' ),
+                    
+                ),
+                array(
+                    'id'       => 'contact-section-address',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Contact Section Address', 'wp_elegant' ),
+                    
+                ),
+                array(
+                    'id'       => 'contact-section-phone',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Contact Section Phone', 'wp_elegant' ),
+                    
+                ),
+                array(
+                    'id'       => 'contact-section-email',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Contact Section Email', 'wp_elegant' ),
+                    
+                ),
+                
+            ),
+        ) );
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Footer Contact Form', 'wp_elegant' ),
+            'id'         => 'footer-contact-form',
+            
+            'subsection' => true,
+            'fields'     => array(
+
+                
+                array(
+                    'id'       => 'footer-contact-form',
+                    'type'     => 'text',
+                    'title'    => __( 'Footer Contact Form', 'wp_elegant' ),
+                    'subtitle'    => __( 'Insert Contact Form Shortcode', 'wp_elegant' ),
+                    
+                ),
+                
+                
+            ),
+        ) );
+
+
+
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Social Link', 'wp_elegant' ),
+            'id'         => 'social-link',
+            
+            'subsection' => true,
+            'fields'     => array(
+
+                
+                array(
+                    'id'       => 'social-link-facebook',
+                    'type'     => 'text',
+                    'title'    => __( 'Facebook', 'wp_elegant' ),
+                    'validate' => 'url',
+                ),
+                array(
+                    'id'       => 'social-link-twitter',
+                    'type'     => 'text',
+                    'title'    => __( 'Twitter', 'wp_elegant' ),
+                    'validate' => 'url',
+                ),
+                array(
+                    'id'       => 'social-link-google',
+                    'type'     => 'text',
+                    'title'    => __( 'Google plus', 'wp_elegant' ),
+                    'validate' => 'url',
+                ), 
+                array(
+                    'id'       => 'social-link-youtube',
+                    'type'     => 'text',
+                    'title'    => __( 'Youtube', 'wp_elegant' ),
+                    'validate' => 'url',
+                ),
+                
+                array(
+                    'id'       => 'social-link-pinterest',
+                    'type'     => 'text',
+                    'title'    => __( 'Pinterest', 'wp_elegant' ),
+                    'validate' => 'url',
+                ),
+                array(
+                    'id'       => 'social-link-instagram',
+                    'type'     => 'text',
+                    'title'    => __( 'Instagram', 'wp_elegant' ),
+                    'validate' => 'url',
+                ),
+                
+                
+                
+            ),
+        ) );
+
+
+        Redux::setSection( $opt_name, array(
+            'title'            => __( 'About Page', 'wp_elegant' ),
+            'id'               => 'basic-about',
+            'desc'             => __( 'Elegant About', 'wp_elegant' ),
+            'customizer_width' => '400px',
+            'icon'             => ' el el-website'
+        ) );
+
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Type Section', 'wp_elegant' ),
+            'id'         => 'about-section',
+            
+            'subsection' => true,
+            'fields'     => array(
+                
+                array(
+                    'id'       => 'type-section-title',
+                    'type'     => 'text',
+                    'title'    => __( 'Type Section Title', 'wp_elegant' ),
+                    
+                    
+                ),
+                array(
+                    'id'       => 'type-section-project-no-1',
+                    'type'     => 'text',
+                    'title'    => __( 'Type First Project No', 'wp_elegant' ),
+                    
+                    
+                ),
+                array(
+                    'id'       => 'type-section-descriptio-1',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Type First Description', 'wp_elegant' ),
+                    
+                    
+                ),
+                array(
+                    'id'       => 'type-section-project-no-2',
+                    'type'     => 'text',
+                    'title'    => __( 'Type Second Project No', 'wp_elegant' ),
+                    
+                    
+                ),
+                array(
+                    'id'       => 'type-section-descriptio-2',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Type Second Description', 'wp_elegant' ),
+                    
+                    
+                ),
+                array(
+                    'id'       => 'type-section-project-no-3',
+                    'type'     => 'text',
+                    'title'    => __( 'Type Third Project No', 'wp_elegant' ),
+                    
+                    
+                ),
+                array(
+                    'id'       => 'type-section-descriptio-3',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Type Third Description', 'wp_elegant' ),
+                    
+                    
+                ),
+                array(
+                    'id'       => 'type-section-project-no-4',
+                    'type'     => 'text',
+                    'title'    => __( 'Type Fourth Project No', 'wp_elegant' ),
+                    
+                    
+                ),
+                array(
+                    'id'       => 'type-section-descriptio-4',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Type Fourth Description', 'wp_elegant' ),
+                    
+                    
+                ),
+                
+                
+                
+            ),
+        ) );
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Package Choosen  Page', 'wp_elegant' ),
+            'id'         => 'package-choosen-section',
+            
+            
+            'fields'     => array(
+                
+                array(
+                    'id'       => 'package-choosen-backgorud-image',
+                    'type'     => 'media',
+                    'title'    => __( 'Package Choosen Background Image', 'wp_elegant' ),
+                    
+                    
+                ),
+                array(
+                    'id'       => 'package-choosen-form-title',
+                    'type'     => 'text',
+                    'title'    => __( 'Package Choosen Form Title', 'wp_elegant' ),
+                    
+                    
+                ),
+                array(
+                    'id'       => 'package-choosen-form',
+                    'type'     => 'text',
+                    'title'    => __( 'Package Choosen Form', 'wp_elegant' ),
+                    'subtitle' =>__('Insert The Conatct Form ShortCode', 'wp_elegant')
+                    
+                    
+                ),
+                array(
+                    'id'       => 'package-choosen-name',
+                    'type'     => 'multi_text',
+                    'title'    => __( 'Package Name', 'wp_elegant' ),
+                    
+                    
+                ),
+                
+                
+                
+                
+                
+            ),
+        ) );
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Copy Right Section', 'wp_elegant' ),
+            'id'         => 'copy-right-section',
+            
+            
+            'fields'     => array(
+                
+                array(
+                    'id'       => 'copy-right-text',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Copy Right Text', 'wp_elegant' ),
+                    
+                    
+                ),
+                
+                
+            ),
+        ) );
+        
+
+        
 
     /*
      * <--- END SECTIONS

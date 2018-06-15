@@ -97,7 +97,7 @@ for ($i=0; $i <count($wp_elegant['gallery-section-description']) ; $i++) : ?>
 
                     <h3><?php echo $wp_elegant['gallery-section-description'][$i]['title']?></h3>
 
-                    <p><?php echo $wp_elegant['gallery-section-description'][$i]['description']?> 
+                    <p><?php echo esc_html($wp_elegant['gallery-section-description'][$i]['description']  );?> 
                     </p>
 
                 </div><!-- end .project-content -->

@@ -58,6 +58,7 @@
 
  
         <?php require_once get_template_directory() .'/template-parts/top-section.php';?> 
+        <?php require_once get_template_directory() .'/template-parts/second-section.php';?>
 
 <?php endif?>
            

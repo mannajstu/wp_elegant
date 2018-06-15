@@ -1,5 +1,5 @@
 
-    <div class="team-section main-container scroll-section" data-anchor="our mission">
+    <div id='pack' class="team-section main-container scroll-section" data-anchor="our mission">
 
                 <section class="container">
 
