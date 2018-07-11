@@ -1,7 +1,5 @@
+<?php
 
-
-
- <?php
 /**
  * Template Name: Package Page
  *
@@ -34,26 +32,24 @@ get_header(); ?>
 <!-- =========================
      Section1 - Header   
 ============================== -->
-  <div class="jumbotron" style="background-image: url('<?php echo $wp_elegant['package-choosen-backgorud-image']['url'];?>');">
+  <div class="jumbotron" style="background-image: url('<?php echo $wp_elegant['package-choosen-backgorud-image']['url']; ?>');">
     <div class="container"> 
       <div class="row">
         <!-- Header Left -->
         <div class="col-sm-7">
-          <div class="logo"><a href="<?php echo get_home_url();?>"><img alt="" src="<?php echo $wp_elegant['top-section-logo']['url']?>"></a></div>
+          <div class="logo"><a href="<?php echo get_home_url(); ?>"><img alt="" src="<?php echo $wp_elegant['top-section-logo']['url'] ?>"></a></div>
           <div class="verticle-line">
             <h1>You have chosen <br>
               the 
               <?php 
-              $queryURL = parse_url( html_entity_decode( esc_url( add_query_arg( $arr_params ) ) ) );
-parse_str( $queryURL['query'], $getVar );
-if(!empty($getVar))
-  {
-    $name = $getVar['var'];
-      echo $name;
-    }
-    else{
-      echo "No";
-    }
+              $queryURL = parse_url(html_entity_decode(esc_url(add_query_arg($arr_params))));
+              parse_str($queryURL['query'], $getVar);
+              if (!empty($getVar)) {
+                $name = $getVar['var'];
+                echo $name;
+              } else {
+                echo "No";
+              }
               ?>
               PACKAGE</h1>
           </div>
@@ -64,7 +60,7 @@ if(!empty($getVar))
         <div class="col-sm-5" id="join-us-form" style="    background: white;
     padding: 0;"> 
           <!-- Form Title -->
-            <h2 class="form-title"><?php echo $wp_elegant['package-choosen-form-title']?>
+            <h2 class="form-title"><?php echo $wp_elegant['package-choosen-form-title'] ?>
           <span class="arrow-down"></span>
               </h2>
           <!--- /End Form Title -->
@@ -74,7 +70,7 @@ if(!empty($getVar))
 
     <div class="form-bg">
         
-          <?php echo do_shortcode( $wp_elegant['package-choosen-form'] ); ?>
+          <?php echo do_shortcode($wp_elegant['package-choosen-form']); ?>
         
         
       
@@ -97,15 +93,15 @@ if(!empty($getVar))
   <div class="container"> 
     <div class="row">
     
-    <?php foreach ($wp_elegant['package-choosen-name'] as $packname) :{
+    <?php foreach ($wp_elegant['package-choosen-name'] as $packname) : {
       # code...
-    }?>
+    } ?>
     <div class="col-md-4">
       <div class="advertised">
-        <p><a href="<?php echo get_home_url();?>#pack" style="color:white;text-transform:uppercase;text-decoration:none"><?php echo $packname; ?></a></p>
+        <p><a href="<?php echo get_home_url(); ?>#pack" style="color:white;text-transform:uppercase;text-decoration:none"><?php echo $packname; ?></a></p>
       </div>
     </div>
-    <?php endforeach;?>
+    <?php endforeach; ?>
     <!-- /End Box4 --> 
   </div>
 </div>
@@ -126,9 +122,10 @@ if(!empty($getVar))
 
 
 <?php
+
 /**
  * The package template file
-*/
+ */
 
 get_footer(); ?>
 

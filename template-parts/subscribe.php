@@ -4,7 +4,7 @@
 
                     <div class="second-parallax-content">
 
-                        <section class="container">
+                        <section class="container" >
 
                             <div class="row">
 

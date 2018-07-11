@@ -286,7 +286,7 @@ Redux::setArgs( $opt_name, $args );
             ),
         ) );
         Redux::setSection( $opt_name, array(
-            'title'      => __( 'Second Section', 'wp_elegant' ),
+            'title'      => __( 'About Section', 'wp_elegant' ),
             'id'         => 'second-section',
             
             'subsection' => true,
@@ -295,15 +295,90 @@ Redux::setArgs( $opt_name, $args );
                 array(
                     'id'       => 'second-section-backgroud-image',
                     'type'     => 'media',
-                    'title'    => __( 'Second Section Background Image', 'wp_elegant' ),
+                    'title'    => __( 'About Section Background Image', 'wp_elegant' ),
                     
                 ),
                 array(
                     'id'       => 'second-section-description',
                     'type'     => 'textarea',
-                    'title'    => __( 'Second Section Description', 'wp_elegant' ),
+                    'title'    => __( 'About Section Description', 'wp_elegant' ),
                     
                 ),
+            ),
+        ) );
+        Redux::setSection( $opt_name, array(
+            'title'      => __( 'Type Section', 'wp_elegant' ),
+            'id'         => 'about-section',
+            
+            'subsection' => true,
+            'fields'     => array(
+                
+                array(
+                    'id'       => 'type-section-title',
+                    'type'     => 'text',
+                    'title'    => __( 'Type Section Title', 'wp_elegant' ),
+                    
+                    
+                ),
+                array(
+                    'id'       => 'type-section-project-no-1',
+                    'type'     => 'text',
+                    'title'    => __( 'Type First Project No', 'wp_elegant' ),
+                    
+                    
+                ),
+                array(
+                    'id'       => 'type-section-descriptio-1',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Type First Description', 'wp_elegant' ),
+                    
+                    
+                ),
+                array(
+                    'id'       => 'type-section-project-no-2',
+                    'type'     => 'text',
+                    'title'    => __( 'Type Second Project No', 'wp_elegant' ),
+                    
+                    
+                ),
+                array(
+                    'id'       => 'type-section-descriptio-2',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Type Second Description', 'wp_elegant' ),
+                    
+                    
+                ),
+                array(
+                    'id'       => 'type-section-project-no-3',
+                    'type'     => 'text',
+                    'title'    => __( 'Type Third Project No', 'wp_elegant' ),
+                    
+                    
+                ),
+                array(
+                    'id'       => 'type-section-descriptio-3',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Type Third Description', 'wp_elegant' ),
+                    
+                    
+                ),
+                array(
+                    'id'       => 'type-section-project-no-4',
+                    'type'     => 'text',
+                    'title'    => __( 'Type Fourth Project No', 'wp_elegant' ),
+                    
+                    
+                ),
+                array(
+                    'id'       => 'type-section-descriptio-4',
+                    'type'     => 'textarea',
+                    'title'    => __( 'Type Fourth Description', 'wp_elegant' ),
+                    
+                    
+                ),
+                
+                
+                
             ),
         ) );
         Redux::setSection( $opt_name, array(
@@ -609,89 +684,7 @@ Redux::setArgs( $opt_name, $args );
         ) );
 
 
-        Redux::setSection( $opt_name, array(
-            'title'            => __( 'About Page', 'wp_elegant' ),
-            'id'               => 'basic-about',
-            'desc'             => __( 'Elegant About', 'wp_elegant' ),
-            'customizer_width' => '400px',
-            'icon'             => ' el el-website'
-        ) );
-
-        Redux::setSection( $opt_name, array(
-            'title'      => __( 'Type Section', 'wp_elegant' ),
-            'id'         => 'about-section',
-            
-            'subsection' => true,
-            'fields'     => array(
-                
-                array(
-                    'id'       => 'type-section-title',
-                    'type'     => 'text',
-                    'title'    => __( 'Type Section Title', 'wp_elegant' ),
-                    
-                    
-                ),
-                array(
-                    'id'       => 'type-section-project-no-1',
-                    'type'     => 'text',
-                    'title'    => __( 'Type First Project No', 'wp_elegant' ),
-                    
-                    
-                ),
-                array(
-                    'id'       => 'type-section-descriptio-1',
-                    'type'     => 'textarea',
-                    'title'    => __( 'Type First Description', 'wp_elegant' ),
-                    
-                    
-                ),
-                array(
-                    'id'       => 'type-section-project-no-2',
-                    'type'     => 'text',
-                    'title'    => __( 'Type Second Project No', 'wp_elegant' ),
-                    
-                    
-                ),
-                array(
-                    'id'       => 'type-section-descriptio-2',
-                    'type'     => 'textarea',
-                    'title'    => __( 'Type Second Description', 'wp_elegant' ),
-                    
-                    
-                ),
-                array(
-                    'id'       => 'type-section-project-no-3',
-                    'type'     => 'text',
-                    'title'    => __( 'Type Third Project No', 'wp_elegant' ),
-                    
-                    
-                ),
-                array(
-                    'id'       => 'type-section-descriptio-3',
-                    'type'     => 'textarea',
-                    'title'    => __( 'Type Third Description', 'wp_elegant' ),
-                    
-                    
-                ),
-                array(
-                    'id'       => 'type-section-project-no-4',
-                    'type'     => 'text',
-                    'title'    => __( 'Type Fourth Project No', 'wp_elegant' ),
-                    
-                    
-                ),
-                array(
-                    'id'       => 'type-section-descriptio-4',
-                    'type'     => 'textarea',
-                    'title'    => __( 'Type Fourth Description', 'wp_elegant' ),
-                    
-                    
-                ),
-                
-                
-                
-            ),
-        ) );
+               
         Redux::setSection( $opt_name, array(
             'title'      => __( 'Package Choosen  Page', 'wp_elegant' ),
             'id'         => 'package-choosen-section',

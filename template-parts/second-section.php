@@ -1,4 +1,4 @@
- <div class="fullscreen background parallax clearfix" style="background-image:url('<?php echo $wp_elegant['second-section-backgroud-image']['url']?>');" data-img-width="1600" data-img-height="1064" data-diff="100">
+ <div class="fullscreen background parallax clearfix" style="background-image:url('<?php echo $wp_elegant['second-section-backgroud-image']['url'] ?>');" data-img-width="1600" data-img-height="1064" data-diff="100">
 
                 <div class="main-parallax-content">
 
@@ -10,9 +10,9 @@
 
                                 <div class="col-lg-8 col-md-offset-2">
 
-                                    <div class="mini-about-us box beige-color textleft">
+                                    <div class="mini-about-us box beige-color textleft" data-anchor="about">
 
-                                       <?php echo $wp_elegant['second-section-description']?>
+                                       <?php echo $wp_elegant['second-section-description'] ?>
 
                                     </div><!-- end .mini-about-us -->
 

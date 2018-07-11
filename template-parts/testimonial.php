@@ -1,10 +1,9 @@
- <div class="testimonials-section fullscreen background parallax scroll-section clearfix" style="background-image:url('<?php echo $wp_elegant['testimonial-section-backgroud-image']['url']?>');" data-img-width="1600" data-img-height="1064" data-diff="100"  data-anchor="testimonials">
+ <div class="testimonials-section fullscreen background parallax scroll-section clearfix" style="background-image:url('<?php echo $wp_elegant['testimonial-section-backgroud-image']['url'] ?>');" data-img-width="1600" data-img-height="1064" data-diff="100"  data-anchor="testimonials">
 
-                <div class="main-parallax-content">
+                <div class="main-parallax-content ">
 
-                    <div class="second-parallax-content">
-
-                        <section class="container">
+                    <div class="second-parallax-content " >
+                        <section class="container" >
 
                             <div class="row">
 
@@ -13,7 +12,7 @@
                                     <div class="col-lg-12">
 
                                         <div class="page-sub-title textcenter box">
-                                            <h2><?php echo $wp_elegant['testimonial-section-title']?></h2>
+                                            <h2><?php echo $wp_elegant['testimonial-section-title'] ?></h2>
                                             <div class="line"></div>
                                         </div><!-- end .page-sub-title -->
 
@@ -26,13 +25,13 @@
 <li class="testimonial">
                                                       <div class="testimonial-centent">
                                                         <figure class="avatar">
-                                                            <img width="80" height="80" src="<?php echo $textdes['image']?>" alt="Wedding Dj Miami">
+                                                            <img width="80" height="80" src="<?php echo $textdes['image'] ?>" alt="Wedding Dj Miami">
                                                         </figure>
-                                                        <p><?php echo $textdes['description']?> </p>
+                                                        <p><?php echo $textdes['description'] ?> </p>
                                                     </div>
                                                 </li><!-- end .testimonial -->
                                                 
-<?php endforeach ;?>  
+<?php endforeach; ?>  
 
 
 
